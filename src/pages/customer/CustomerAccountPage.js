@@ -79,6 +79,8 @@ export class CustomerAccountPage {
   }
 
   async assertCorrectCustomerNameIsVisible(customerName) {
-    await expect(this.page.getByText('Welcome ' + customerName)).toBeVisible();
+    const welcomeMessage = this.page.getByText('Welcome');
+
+    await expect(welcomeMessage).toContainText(customerName);
   }
 }

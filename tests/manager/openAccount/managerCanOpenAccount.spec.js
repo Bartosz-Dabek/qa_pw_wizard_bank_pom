@@ -4,9 +4,9 @@ import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage';
 import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage';
 import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage';
 
-let firstName = faker.person.firstName();
-let lastName = faker.person.lastName();
-let postCode = faker.location.zipCode();
+let firstName;
+let lastName;
+let postCode;
 test.beforeEach(async ({ page }) => {
   /* 
   Pre-conditons:
@@ -18,6 +18,10 @@ test.beforeEach(async ({ page }) => {
   6. Reload the page (This is a simplified step to close the popup).
   */
   const addCustomerPage = new AddCustomerPage(page);
+
+  firstName = faker.person.firstName();
+  lastName = faker.person.lastName();
+  postCode = faker.location.zipCode();
   
   await addCustomerPage.open();
   await addCustomerPage.fillFirstName(firstName);
@@ -27,7 +31,7 @@ test.beforeEach(async ({ page }) => {
   await addCustomerPage.pageReload();
 });
 
-test('Assert manager can add new customer', async ({ page }) => {
+test('Assert manager can open an account for a customer', async ({ page }) => {
   /* 
   Test:
   1. Click [Open Account].

@@ -64,7 +64,7 @@ export class CustomersListPage {
   }    
 
   async assertSearchShowsOnlyOneResult() {
-    await expect(this.page.getByRole('row').nth(2)).toBeHidden();
+    await expect(this.page.locator('tbody tr')).toHaveCount(1);
   }
 
 }

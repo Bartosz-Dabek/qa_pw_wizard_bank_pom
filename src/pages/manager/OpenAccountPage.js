@@ -1,7 +1,6 @@
 import { expect } from '@playwright/test';
 
 export class OpenAccountPage {
-  /** @type {import('@playwright/test').Locator} */
   constructor(page) {
     this.page = page;
   }
@@ -17,7 +16,7 @@ export class OpenAccountPage {
   }
 
   async assertCurrency(currency) {
-    await expect(this.page.getByTestId('currency')).toContainText(currency);
+    await expect(this.page.locator('#currency')).toHaveValue(currency);
   }
 
   async selectCustomer(firstName, lastName) {

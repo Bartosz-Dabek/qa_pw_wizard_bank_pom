@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage';
 import { faker } from '@faker-js/faker';
-import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage';
+import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage.js';
 import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage';
 import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage';
 
